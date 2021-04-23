@@ -34,12 +34,14 @@ class ParkingGarage():
         ticket = input("Please enter your name:  ").lower()
         if ticket in self.currentTicket:
             pay = input(
-                "Pease insert your method of payment and press  --(y)--:   ").lower()
+                "Please insert your method of payment and press  --(y)--:   ").lower()
             if pay == "y":
                 self.tickets.append(self.currentTicket[ticket])
                 self.spaces = len(self.tickets)
                 del self.currentTicket[ticket]
                 garage1.leave_garage()
+        else:
+            print("You dont have any tickets to pay for")
 
     def leave_garage(self):
         print("You have 15 min to leave")
